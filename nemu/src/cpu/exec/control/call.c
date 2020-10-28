@@ -8,6 +8,7 @@ make_helper(call)
 	swaddr_write(cpu.esp - 4 , 4 , ret_addr);
 	cpu.esp = cpu.esp - 4;
 	cpu.eip = op_src->val;
+	print_asm("call %x" , cpu.eip + 1 + len);
 	return len + 1;
 
 
