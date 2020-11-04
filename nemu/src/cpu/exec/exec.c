@@ -24,12 +24,12 @@ make_group(group1_b,
 
 /* 0x81 */
 make_group(group1_v,
-	inv, inv, inv, inv, 
+	add_i2rm_v, inv, inv, inv, 
 	inv, inv, inv, cmp_i2rm_v)
 
 /* 0x83 */
 make_group(group1_sx_v,
-	inv, inv, inv, inv, 
+	add_si2rm_v, inv, inv, inv, 
 	inv, inv, inv, cmp_si2rm_v)
 
 /* 0xc0 */
@@ -94,8 +94,8 @@ make_group(group7,
 /* TODO: Add more instructions!!! */
 
 helper_fun opcode_table [256] = {
-/* 0x00 */	inv, inv, inv, inv,
-/* 0x04 */	inv, inv, inv, inv,
+/* 0x00 */	inv, add_r2rm_v, inv, add_rm2r_v,
+/* 0x04 */	inv, add_i2a_v, inv, inv,
 /* 0x08 */	inv, inv, inv, inv,
 /* 0x0c */	inv, inv, inv, _2byte_esc,
 /* 0x10 */	inv, inv, inv, inv,
