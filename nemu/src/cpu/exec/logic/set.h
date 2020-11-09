@@ -1,5 +1,5 @@
-#ifndef __SETCC_H__
-#define __SETCC_H__
+#ifndef __SET_H__
+#define __SET_H__
 
 make_helper(setne);
 
