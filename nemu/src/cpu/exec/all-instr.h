@@ -28,7 +28,7 @@
 #include "logic/shr.h"
 #include "logic/shrd.h"
 #include "logic/test.h"
-#include "logic/set.h"
+#include "logic/setcc.h"
 
 #include "control/call.h"
 #include "control/jcc.h"
