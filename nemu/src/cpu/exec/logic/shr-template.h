@@ -11,7 +11,8 @@ static void do_execute () {
 	OPERAND_W(op_dest, dest);
 
 	/* TODO: Update EFLAGS. */
-	panic("please implement me");
+	 update_eflags_pf_zf_sf(dest);
+
 
 	print_asm_template2();
 }
