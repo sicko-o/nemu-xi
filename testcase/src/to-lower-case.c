@@ -12,7 +12,7 @@ int main() {
 	int i;
 	for(i = 0; i < 128; i ++) {
 		nemu_assert(to_lower_case(i) == ans[i]);
-set_bp();
+
 	}
 
 	nemu_assert(i == 128);
