@@ -16,8 +16,8 @@ __attribute__((used)) static int format_FLOAT(FILE *stream, FLOAT f) {
 	 */
 
 	char buf[80];
-	int len = sprintf(buf, "0x%08x", f);
-	return __stdio_fwrite(buf, len, stream);
+	//int len = sprintf(buf, "0x%08x", f);
+	//return __stdio_fwrite(buf, len, stream);
 }
 
 static void modify_vfprintf() {
