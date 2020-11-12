@@ -11,7 +11,7 @@ LIBC_INC_DIR := $(LIB_COMMON_DIR)/uclibc/include
 LIBC_LIB_DIR := $(LIB_COMMON_DIR)/uclibc/lib
 LIBC := $(LIBC_LIB_DIR)/libc.a
 FLOAT := obj/$(LIB_COMMON_DIR)/FLOAT/FLOAT.a
-
+testcase_LDFLAGS := -m elf_i386 -e main -Ttext-segment=0x00800000
 include config/Makefile.git
 include config/Makefile.build
 
@@ -54,8 +54,8 @@ clean: clean-cpp
 ##### some convinient rules #####
 
 USERPROG := obj/testcase/add
-ENTRY := $(USERPROG)
-
+-ENTRY := $(USERPROG)
+ENTRY := $(kernel_BIN)
 entry: $(ENTRY)
 	objcopy -S -O binary $(ENTRY) entry
 
