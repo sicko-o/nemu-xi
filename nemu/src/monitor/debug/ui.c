@@ -126,18 +126,18 @@ static int cmd_bt(char *args) {
 		swaddr_t prev_ebp;
 		swaddr_t ret_addr;
 		uint32_t args[4];
-	} sf;
+	}posf;
 
 	uint32_t ebp = cpu.ebp;
 	uint32_t eip = cpu.eip;
 	int i = 0;
 	while(ebp != 0) {
-		sf.args[0] = swaddr_read(ebp + 8, 4);
-		sf.args[1] = swaddr_read(ebp + 12, 4);
-		sf.args[2] = swaddr_read(ebp + 16, 4);
-		sf.args[3] = swaddr_read(ebp + 20, 4);
+		posf.args[0] = swaddr_read(ebp + 8, 4);
+		posf.args[1] = swaddr_read(ebp + 12, 4);
+		posf.args[2] = swaddr_read(ebp + 16, 4);
+		posf.args[3] = swaddr_read(ebp + 20, 4);
 
-		printf("#%d 0x%08x in %s (0x%08x 0x%08x 0x%08x 0x%08x)\n", i, eip, find_fun_name(eip), sf.args[0], sf.args[1], sf.args[2], sf.args[3]);
+		printf("#%d 0x%08x in %s (0x%08x 0x%08x 0x%08x 0x%08x)\n", i, eip, find_fun_name(eip), posf.args[0], posf.args[1], posf.args[2], posf.args[3]);
 		i ++;
 		eip = swaddr_read(ebp + 4, 4);
 		ebp = swaddr_read(ebp, 4);
